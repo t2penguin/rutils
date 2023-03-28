@@ -1,3 +1,8 @@
-# rutils
+# Rutils (ROS utils) 
 
-ROS utils（rutils）です。
+このパッケージは、ROSのユーティリティです。
+ROSスクリプトでないプログラムを、簡単にROSのサブスクライバやパブリッシャに仕立て直すことができるプログラムを作成します。
+
+
+## Installation
+
