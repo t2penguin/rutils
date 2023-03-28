@@ -6,3 +6,9 @@ ROSスクリプトでないプログラムを、簡単にROSのサブスクラ�
 
 ## Installation
 
+bash 
+catkin_create_pkg hello_pkg std_msgs rospy
+mkdir hello_pkg/script
+# スクリプトの作成
+
+catkin build
