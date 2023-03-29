@@ -4,6 +4,10 @@
 ROSスクリプトでないプログラムを、簡単にROSのサブスクライバやパブリッシャに仕立て直すことができるプログラムを作成します。
 
 
+
+https://user-images.githubusercontent.com/129230448/228406595-3fc3f2df-c0d6-4c31-bab0-65b0ae3b8530.mov
+
+
 ## Installation
 インストールは次のコマンドでできます。
 なお、ROSで使用しているpythonのpipをご使用ください。
