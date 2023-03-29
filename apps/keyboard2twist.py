@@ -52,3 +52,15 @@ class KeyboradApp(ToTwist):
         else:
             pass
 
+if __name__ == '__main__':
+    print('Sample: KeyboardApp2twist')
+
+    node = KeyboradApp(
+            pub_topic_name='/jackal_velocity_controller/cmd_vel')
+    rospy.init_node('KeyboradApp_node')
+
+    rate = rospy.Rate(30)#Hz
+
+    while not rospy.is_shutdown():
+        node.forward()
+        rate.sleep()
