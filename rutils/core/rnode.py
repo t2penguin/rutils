@@ -3,6 +3,7 @@
 import sys, os
 import rospy
 from geometry_msgs.msg import Twist
+from sensor_msgs.msg import LaserScan
 
 
 class RNode:
@@ -28,7 +29,8 @@ class RNode:
         
         if sub_topic_name != None and sub_service_class != None:
             self.sub_topic_name = sub_topic_name
-            self.sub = rospy.Service(
+            print('Sub: \"' + self.sub_topic_name + '\"')
+            self.sub = rospy.Subscriber(
                     self.sub_topic_name,
                     sub_service_class,
                     self.callback
@@ -51,7 +53,7 @@ class RNode:
         pass
 
 
-    def callback(self):
+    def callback(self, msg):
         pass
 
 
