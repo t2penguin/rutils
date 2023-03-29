@@ -4,5 +4,8 @@ setup(
     name='rutils',
     version='0.0.3',
     author='t2penguin',
-    # packages=find_packages()
+    packages=find_packages(),
+    install_requires=[
+        'rospy',
+    ],
 )
