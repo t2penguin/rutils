@@ -3,7 +3,7 @@
 import sys, os
 import rospy
 from geometry_msgs.msg import Twist
-from core.rnode import RNode
+from rutils.core.rnode import RNode
 
 
 class ToTwist(RNode):
@@ -27,7 +27,7 @@ class ToTwist(RNode):
             pub_service_class
         ):
 
-        super(ToTwist).__init__(
+        super().__init__(
                 pub_topic_name=pub_topic_name,
                 pub_service_class=pub_service_class
         )

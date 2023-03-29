@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
-from core.toTwist import ToTwist
-from utils.getch import getch
+import rospy
+from geometry_msgs.msg import Twist
+from rutils.core.toTwist import ToTwist
+from rutils.utils.getch import getch
 
 
 class KeyboradApp(ToTwist):
@@ -25,14 +27,17 @@ class KeyboradApp(ToTwist):
             pub_service_class
         ):
 
-        super(ToTwist).__init__(
+        super().__init__(
                 pub_topic_name=pub_topic_name,
                 pub_service_class=pub_service_class
         )
+        
+        self.v = 0.5
+        self.w = 0.5
 
 
     def calculate_twist(self):
-        keyboard_controller()
+        self.keyboard_controller()
 
     
     def keyboard_controller(self):
@@ -56,7 +61,9 @@ if __name__ == '__main__':
     print('Sample: KeyboardApp2twist')
 
     node = KeyboradApp(
-            pub_topic_name='/jackal_velocity_controller/cmd_vel')
+            pub_topic_name='/jackal_velocity_controller/cmd_vel',
+            pub_service_class=Twist
+    )
     rospy.init_node('KeyboradApp_node')
 
     rate = rospy.Rate(30)#Hz
@@ -64,3 +71,4 @@ if __name__ == '__main__':
     while not rospy.is_shutdown():
         node.forward()
         rate.sleep()
+

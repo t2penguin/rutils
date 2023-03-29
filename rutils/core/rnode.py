@@ -30,7 +30,7 @@ class RNode:
             self.sub_topic_name = sub_topic_name
             self.sub = rospy.Service(
                     self.sub_topic_name,
-                    service_class,
+                    sub_service_class,
                     self.callback
             )
         else:
@@ -40,7 +40,7 @@ class RNode:
             self.pub_topic_name = pub_topic_name
             self.pub = rospy.Publisher(
                     self.pub_topic_name, 
-                    Twist, 
+                    pub_service_class, 
                     queue_size=1
             )
         else:
